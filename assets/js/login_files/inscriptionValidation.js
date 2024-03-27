@@ -279,8 +279,6 @@ btnValider.addEventListener("click", function () {
             formData.append("profile_image", image);
         }
 
-        let url = "http://localhost/simple_social_media_backend_CODE/api/users"
-
         axios({
             method: "POST",
             url: `http://localhost/simple_social_media_backend_CODE/api/users`,
