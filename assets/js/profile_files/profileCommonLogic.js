@@ -145,7 +145,6 @@ function getUserTweetsAndFillMainTag(userID, itCurrentUser) {
 
                                     getCommentsFromServer(divTweet, i);
 
-                                    debugger;
                                     document.getElementById(`comments-number`).innerHTML = (Number(document.getElementById(`comments-number`).innerHTML) + 1);
                                     inputComment.value = "";
                                 }
