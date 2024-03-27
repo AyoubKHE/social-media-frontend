@@ -120,7 +120,7 @@ function getUserTweetsAndFillMainTag(userID, itCurrentUser) {
                             url: `http://localhost/simple_social_media_backend_CODE/api/comments`,
                             headers: {
                                 Authorization: `Bearer ${localStorage.getItem("token")}`,
-                                'Content-Type' : 'application/json'
+                                'Content-Type': 'application/json'
                             },
                             data: {
                                 "body": inputComment.value,
@@ -142,9 +142,11 @@ function getUserTweetsAndFillMainTag(userID, itCurrentUser) {
                                 else {
 
                                     alert("Commentaire bien ajouté");
-    
+
                                     getCommentsFromServer(divTweet, i);
-    
+
+                                    debugger;
+                                    document.getElementById(`comments-number`).innerHTML = (Number(document.getElementById(`comments-number`).innerHTML) + 1);
                                     inputComment.value = "";
                                 }
 
@@ -219,7 +221,7 @@ function getUserTweetsAndFillMainTag(userID, itCurrentUser) {
                         })
                             .then((response) => {
                                 console.log(response);
-            
+
                                 if (response.data.hasOwnProperty("Failure_Message") === true || response.data.hasOwnProperty("Errors")) {
                                     alert("Probleme sur le serveur");
                                 }
@@ -230,16 +232,16 @@ function getUserTweetsAndFillMainTag(userID, itCurrentUser) {
                                 }
                                 else {
                                     alert("Tweete bien supprimer");
-            
+
                                     addSpinnerToMain();
-            
+
                                     // let currentUserProfile = JSON.parse(localStorage.getItem("currentUser"));
                                     // getUserTweetsAndFillMainTag(currentUserProfile.user_id, true);
-            
+
                                     //! we should reload the entire page to avoid caching
                                     location.reload(true);
                                 }
-            
+
                             })
                             .catch((error) => {
                                 console.log("line 121");
