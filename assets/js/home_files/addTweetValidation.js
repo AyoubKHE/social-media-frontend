@@ -51,20 +51,6 @@ let epTweetBody = document.getElementById("ep-tweet-body");
 
 let epTweetBodyText = document.getElementById("ep-tweet-body-text");
 
-// textareaTweetBody.addEventListener("blur", function () {
-
-//     if (textareaTweetBody.value === "") {
-
-//         epTweetBody.style.display = "inline";
-//         epTweetBodyText.textContent = "Champ obligatoire !";
-//         epTweetBodyText.style.width = "160px";
-//     }
-//     else {
-//         epTweetBody.style.display = "none";
-//         epTweetBodyText.textContent = "";
-//     }
-// })
-
 //! button Valider______________________________________________________________________________________________________________________________________ 
 
 let btnValider = document.getElementById("btn-valider");
@@ -142,49 +128,6 @@ btnValider.addEventListener("click", function () {
                 alert("Problème de connexion, réessayez plus tard");
             })
 
-        // axios.post("http://localhost/simple_social_media_backend_CODE/api/tweets", formData, configs)
-        // .then((response) => {
-        //     console.log(response);
-        //     let modal = document.getElementById("addTweetModal");
-        //     let modalInstance = bootstrap.Modal.getInstance(modal);
-        //     modalInstance.hide();
-        //     alert("Tweete bien ajouter");
-
-        //     addSpinnerToMain();
-
-        //     getAllTweetsAndFillMainTag(1);
-        // })
-        // .catch((error) => {
-        //     console.log(error);
-        //     if (error.hasOwnProperty("response") === false) {
-        //         alert("Problème de connexion, réessayez plus tard");
-        //     }
-        //     else {
-        //         alert("Il faut se connecter avec un compte pour ajouter un commentaire");
-        //     }
-        // })
-
-        // axios.post("https://tarmeezacademy.com/api/v1/Tweets", formData, configs)
-        //     .then((response) => {
-        //         console.log(response);
-        //         let modal = document.getElementById("addTweetModal");
-        //         let modalInstance = bootstrap.Modal.getInstance(modal);
-        //         modalInstance.hide();
-        //         alert("Tweete bien ajouter");
-
-        //         addSpinnerToMain();
-
-        //         getAllTweetsAndFillMainTag(1);
-        //     })
-        //     .catch((error) => {
-        //         console.log(error);
-        //         if (error.hasOwnProperty("response") === false) {
-        //             alert("Problème de connexion, réessayez plus tard");
-        //         }
-        //         else {
-        //             alert("Il faut se connecter avec un compte pour ajouter un commentaire");
-        //         }
-        //     })
     }
 
     if (isDataAreIntegrale()) {

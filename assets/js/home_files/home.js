@@ -4,7 +4,7 @@ if(token === null) {
     window.location = "index.php";
 }
 
-console.log(JSON.parse(localStorage.getItem("currentUser")));
+// console.log(JSON.parse(localStorage.getItem("currentUser")));
 
 let currentUserProfile = JSON.parse(localStorage.getItem("currentUser"));
 if (currentUserProfile !== null) {

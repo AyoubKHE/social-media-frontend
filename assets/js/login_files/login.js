@@ -62,24 +62,6 @@ btnLogin.addEventListener("click", function (event) {
             alert("Problème de connexion, réessayez plus tard");
         })
 
-        // axios.post("https://tarmeezacademy.com/api/v1/login", bodyParameter)
-        //     .then((response) => {
-        //         console.log(response);
-        //         localStorage.setItem("token", response.data.token);
-        //         localStorage.setItem("currentUser", JSON.stringify(response.data.user));
-        //         window.location = "home.html";
-        //     })
-        //     .catch((error) => {
-        //         console.log(error);
-        //         if (error.hasOwnProperty("response") === true) {
-        //             alert("Username ou mot de passe invalide");
-        //         }
-        //         else {
-        //             alert("Problème de connexion, réessayez plus tard");
-        //         }
-        //     })
-
-
     }
 
     let username = document.getElementById("input-username").value;

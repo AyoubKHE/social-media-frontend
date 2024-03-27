@@ -62,7 +62,7 @@ function getAllTweetsAndFillMainTag(currentPage) {
                         let comments = response.data.Data;
                         ulComments.innerHTML = "";
                         for (let j = 0; j < comments.length; j++) {
-                            let liComment = document.createElement("div");
+                            let liComment = document.createElement("li");
                             liComment.innerHTML = `
                         <li>
                             <img src="http://localhost/simple_social_media_backend_CODE${comments[j].author.profile_image_path}" alt="" class="user-img">
@@ -93,7 +93,7 @@ function getAllTweetsAndFillMainTag(currentPage) {
 
                     let ulComments = divTweet.querySelector(".comments");
                     if (ulComments.innerText === "") {
-                        if (Tweets[i].comments_count === 0) {
+                        if (Tweets[i].tweet_comments_count === 0) {
                             ulComments.innerHTML = "Ajouter un commentaire";
                         }
                         else {
@@ -102,6 +102,7 @@ function getAllTweetsAndFillMainTag(currentPage) {
 
                                 getCommentsFromServer(divTweet, i);
                             }
+
                         }
                     }
 
@@ -163,39 +164,6 @@ function getAllTweetsAndFillMainTag(currentPage) {
                             })
                     }
 
-                    // let url = `https://tarmeezacademy.com/api/v1/Tweets/${Tweets[i].tweet_id}/comments`;
-
-                    // let params = {
-                    //     "body": inputComment.value,
-                    //     "tweet_id": Tweets[i].tweet_id
-                    // }
-
-                    // let configs = {
-                    //     headers: {
-                    //         Authorization: `Bearer ${localStorage.getItem("token")}`
-                    //     }
-                    // }
-
-                    //     axios.post(url, params, configs)
-                    //         .then((response) => {
-                    //             console.log(response);
-                    //             alert("Commentaire bien ajouté");
-
-                    //             getCommentsFromServer(divTweet, i);
-
-                    //             inputComment.value = "";
-                    //         })
-                    //         .catch((error) => {
-                    //             console.log("line 118");
-                    //             if (error.hasOwnProperty("response") === true) {
-                    //                 alert("Il faut se connecter avec un compte pour ajouter un commentaire");
-                    //             }
-                    //             else {
-                    //                 alert("Problème de connexion, réessayez plus tard");
-                    //             }
-
-                    //         })
-                    // }
                 })
             }
 
@@ -319,243 +287,6 @@ function getAllTweetsAndFillMainTag(currentPage) {
             alert("Problème de connexion, réessayez plus tard");
         })
 
-    // axios.get(`http://localhost/simple_social_media_backend_CODE/api/tweets?page=${currentPage}`)
-    // .then((response) => {
-
-    //     console.log(response);
-
-    //     function getCommentsFromServer(divTweet, i) {
-
-    //         let ulComments = divTweet.querySelector(".comments");
-
-    //         ulComments.innerHTML = `
-    //             <div style="text-align: center;">
-    //                 <div class="spinner-border" role="status" id="spinner">
-    //                     <span class="visually-hidden">Loading...</span>
-    //                 </div>
-    //             </div>
-    //         `
-
-    //         axios.get(`https://tarmeezacademy.com/api/v1/Tweets/${Tweets[i].id}`)
-    //             .then((response) => {
-
-    //                 console.log(response.data.data.comments);
-    //                 let comments = response.data.data.comments;
-    //                 ulComments.innerHTML = "";
-    //                 for (let j = 0; j < comments.length; j++) {
-    //                     let liComment = document.createElement("div");
-    //                     liComment.innerHTML = `
-    //                         <li>
-    //                             <img src="${comments[j].author.profile_image}" alt="" class="user-img">
-    //                             <span class="comment-username">${comments[j].author.username}</span>
-    //                             <p class="tweet-username">${comments[j].body}</p>
-    //                         </li>
-    //                     `
-    //                     ulComments.appendChild(liComment);
-    //                 }
-
-    //                 let currentTweetComments = divTweet.querySelector(`#tweet-${Tweets[i].id}-comments`);
-    //                 currentTweetComments.innerHTML = `${comments.length} Commentaires`;
-
-
-    //             })
-    //             .catch((error) => {
-    //                 console.log("line 43");
-    //                 console.log(error);
-    //                 alert("Problème de connexion, réessayez plus tard");
-    //             })
-    //     }
-
-    //     function addEventToShowTweetComments(divTweet, i) {
-
-    //         let currentTweetComments = divTweet.querySelector(`#tweet-${Tweets[i].id}-comments`);
-    //         currentTweetComments.addEventListener("click", function () {
-
-    //             let ulComments = divTweet.querySelector(".comments");
-    //             if (ulComments.innerText === "") {
-    //                 if (Tweets[i].comments_count === 0) {
-    //                     ulComments.innerHTML = "Ajouter un commentaire";
-    //                 }
-    //                 else {
-
-    //                     if (currentTweetComments.getAttribute("class") !== "collapsed") {
-
-    //                         getCommentsFromServer(divTweet, i);
-    //                     }
-    //                 }
-    //             }
-
-    //         })
-    //     }
-
-    //     function addTags(divTweet, i) {
-    //         if (Tweets[i].tags.length > 0) {
-    //             let divTags = document.createElement("div");
-    //             divTags.setAttribute("class", "tags");
-    //             for (let j = 0; j < Tweets[i].tags.length; j++) {
-
-    //                 divTags.innerHTML += `
-    //                 <span>${Tweets[i].tags[j].name}</span>
-    //             `
-    //             }
-
-    //             let divComments = divTweet.querySelector(".div-comments");
-    //             divTweet.insertBefore(divTags, divComments);
-    //         }
-    //     }
-
-    //     function addEventToButtonAddComment(divTweet, i) {
-    //         let btnAddComment = divTweet.querySelector(`#btn-add-${Tweets[i].id}`);
-    //         btnAddComment.addEventListener("click", function () {
-    //             let inputComment = divTweet.querySelector(`#input-comment-${Tweets[i].id}`);
-    //             if (inputComment.value === "") {
-    //                 alert("Saisissez un commentaire valide !");
-    //             }
-    //             else {
-
-    //                 let url = `https://tarmeezacademy.com/api/v1/Tweets/${Tweets[i].id}/comments`;
-
-    //                 let params = {
-    //                     "body": inputComment.value
-    //                 }
-
-    //                 let configs = {
-    //                     headers: {
-    //                         Authorization: `Bearer ${localStorage.getItem("token")}`
-    //                     }
-    //                 }
-
-    //                 axios.post(url, params, configs)
-    //                     .then((response) => {
-    //                         console.log(response);
-    //                         alert("Commentaire bien ajouté");
-
-    //                         getCommentsFromServer(divTweet, i);
-
-    //                         inputComment.value = "";
-    //                     })
-    //                     .catch((error) => {
-    //                         console.log("line 118");
-    //                         if (error.hasOwnProperty("response") === true) {
-    //                             alert("Il faut se connecter avec un compte pour ajouter un commentaire");
-    //                         }
-    //                         else {
-    //                             alert("Problème de connexion, réessayez plus tard");
-    //                         }
-
-    //                     })
-    //             }
-    //         })
-    //     }
-
-    //     function addEventToProfileImage(divTweet, i) {
-
-    //         let profileImage = divTweet.querySelector(`#tweet-${Tweets[i].id}-profile-img`);
-
-    //         profileImage.addEventListener("click", function () {
-    //             let userId = Tweets[i].author.id;
-    //             axios.get(`https://tarmeezacademy.com/api/v1/users/${userId}}`)
-    //             .then((response) => {
-    //                 localStorage.setItem("userProfile", JSON.stringify(response.data));
-    //                 window.location = "profile.php";
-    //             })
-    //             .catch((error) => {
-    //                 console.log("line 138");
-    //             })
-
-    //         })
-    //     }
-
-    //     console.log(response);
-    //     console.log(response.data.meta.last_page);
-    //     totalPages = response.data.meta.last_page;
-
-    //     let divMain = document.querySelector("main");
-    //     divMain.style.height = "auto";
-
-    //     if (divMain.firstElementChild.getAttribute("class") !== "tweet") {
-    //         divMain.innerHTML = "";
-    //     }
-
-    //     let Tweets = response.data.data;
-
-    //     for (let i = 0; i < Tweets.length; i++) {
-
-    //         let divTweet = document.createElement("div");
-    //         divTweet.setAttribute("class", "tweet");
-    //         divTweet.innerHTML = `
-    //         <div class="user">
-    //             <img src="${Tweets[i].author.profile_image}" alt="" class="user-img" id="tweet-${Tweets[i].id}-profile-img">
-    //             <span class="tweet-username">${Tweets[i].author.username}</span>
-    //         </div>
-
-    //         <div class="tweet-image">
-    //             <img src="${Tweets[i].image}" alt="">
-    //         </div>
-
-    //         <div class="tweet-informations">
-    //             <span class="tweet-age">${Tweets[i].created_at}</span>
-
-    //             <div class="tweet-title">
-    //                 ${Tweets[i].title === null ? "" : Tweets[i].title}
-    //             </div>
-
-    //             <div class="tweet-body">
-    //                 ${Tweets[i].body === null ? "" : Tweets[i].body}  
-    //             </div>
-
-    //             <hr>
-
-    //         </div>
-
-
-    //         <div class="div-comments">
-    //             <div>
-    //                 <i class="fa fa-commenting-o" aria-hidden="true"></i>
-
-    //                 <a data-bs-toggle="collapse" href="#comment-${Tweets[i].id}" role="button" aria-expanded="false"
-    //                     aria-controls="comments" id="tweet-${Tweets[i].id}-comments">
-    //                     ${Tweets[i].comments_count} Commentaires
-    //                 </a>
-
-    //             </div>
-    //             <div class="collapse" id="comment-${Tweets[i].id}">
-    //                 <div class="card card-body">
-    //                     <ul class="comments">
-
-    //                     </ul>
-
-    //                     <div class="input-comment">
-    //                         <input type="text" id="input-comment-${Tweets[i].id}" placeholder="Ajoutez votre commentaire...">
-    //                         <button class="btn btn-success" id="btn-add-${Tweets[i].id}">Ajouter</button>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </div>
-
-
-    //     `
-
-    //         addEventToProfileImage(divTweet, i);
-
-    //         addTags(divTweet, i);
-
-    //         addEventToShowTweetComments(divTweet, i);
-
-    //         addEventToButtonAddComment(divTweet, i);
-
-    //         divMain.appendChild(divTweet);
-    //     }
-
-    //     itLoading = false;
-    //     page++;
-    //     console.log("loading finished");
-    // })
-    // .catch((error) => {
-    //     console.log("line 231");
-    //     console.log(error);
-    //     alert("Problème de connexion, réessayez plus tard");
-    // })
 }
 
 
@@ -591,35 +322,4 @@ liLogout.addEventListener("click", function () {
     window.location = "index.php";
     localStorage.removeItem("token");
     localStorage.removeItem("currentUser");
-
-    // let url = `https://tarmeezacademy.com/api/v1/logout`;
-
-    // let params = {
-
-    // }
-
-    // let configs = {
-    //     headers: {
-    //         Authorization: `Bearer ${localStorage.getItem("token")}`
-    //     }
-    // }
-
-    // axios.post(url, params, configs)
-    //     .then((response) => {
-    //         console.log(response);
-    //         window.location = "index.html";
-    //         localStorage.removeItem("token");
-    //         localStorage.removeItem("currentUser");
-    //     })
-    //     .catch((error) => {
-    //         console.log("line 68");
-    //         console.log(error);
-    //         if (error.hasOwnProperty("response") === false) {
-    //             alert("Problème de connexion, réessayez plus tard");
-    //         }
-    //         else {
-    //             alert("Il faut se connecter avec un compte pour se déconnecter");
-    //         }
-    //     })
-
 })
