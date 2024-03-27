@@ -71,10 +71,6 @@ inputName.addEventListener("blur", function () {
         inputName.value = "";
         for (let i = 0; i < nomCompletArr.length; i++) {
             inputName.value += nomCompletArr[i][0].toUpperCase() + nomCompletArr[i].substring(1).toLowerCase() + " ";
-            // 0 => aYoUb
-            // 1 => kHeYAr
-            //  nomCompletArr[i][0].toUpperCase() => A
-            // nomCompletArr[i].substring(1)
         }
         inputName.value = inputName.value.trimRight();
     }
