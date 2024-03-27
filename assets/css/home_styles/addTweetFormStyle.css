@@ -1,0 +1,115 @@
+.modal-title {
+    color: #514643;
+
+    /* Declaration de l'animation */
+    animation-name: titre;
+    animation-duration: 3s;
+    /* animation-iteration-count: infinite;
+    animation-direction: alternate; */
+}
+
+@keyframes titre {
+    from {
+        margin-left: 50%;
+        color: #f2f1f1;
+        opacity: 0;
+    }
+
+    to {
+        margin-left: 0;
+        color: #514643;
+        opacity: 1;
+    }
+}
+
+.my-textarea {
+    border: solid 2px #d1d1d1;
+    resize: none;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+.my-form-control {
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: solid 1px silver;
+    border-radius: 0;
+}
+
+.my-form-control:focus {
+    box-shadow: none;
+    border-bottom-color: silver;
+}
+
+
+.my-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+
+    display: none;
+}
+
+.my-tooltip:hover .my-tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.my-tooltiptext {
+    visibility: hidden;
+    width: 230px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.my-tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+}
+
+.my-tooltip .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.btn-outline-success {
+    width: 25%;
+    height: 40px;
+    color: #514643;
+    border-color: #514643;
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #514643;
+    border-color: #514643;
+}

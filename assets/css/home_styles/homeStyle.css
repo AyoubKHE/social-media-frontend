@@ -1,0 +1,214 @@
+body {
+    background-image: linear-gradient(to left, #bcbed5, #dfdada);
+}
+
+/*! header ________________________________________________________________________________________________________________________ */
+
+header {
+    margin-bottom: 50px;
+}
+
+.my-container {
+    width: 50%;
+}
+
+.current-user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid 2px #dbdbdb;
+    cursor: pointer;
+}
+
+.my-navbar {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    box-shadow: 1px 1px 4px #d0baba;
+}
+
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: -96px;
+    margin-top: 0.125rem;
+}
+
+
+
+/*! main ________________________________________________________________________________________________________________________*/
+
+.tweet {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 60px;
+}
+
+
+
+.tweet-header {
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-edit {
+    color: gray;
+    border: solid 1px gray;
+}
+
+.btn-edit:hover {
+    background-color: gray;
+    color: white;
+    border: solid 1px gray;
+}
+
+.btn-delete {
+    color: red;
+    border: solid 1px red;
+}
+
+.btn-delete:hover {
+    background-color: red;
+    color: white;
+    border: solid 1px red;
+}
+
+
+
+
+
+
+.user {
+    padding: 10px;
+}
+
+.user img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: solid 2px #dbdbdb;
+    cursor: pointer;
+}
+
+.tweet-image img {
+    width: 100%;
+    height: 400px;
+    border: solid 2px #dbdbdb;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.tweet-informations {
+    padding: 10px 10px 0 10px;
+}
+
+.tweet-age {
+    color: gray;
+    font-weight: 500;
+}
+
+.tweet-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.tweet-informations hr {
+    border: solid 1px;
+    margin: 10px;
+}
+
+.tags {
+    padding: 10px 10px 0 10px;
+}
+
+.tags span {
+    background-color: #d6cdcd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.div-comments {
+    padding: 10px;
+}
+
+.div-comments a {
+    text-decoration: none;
+    color: black;
+}
+
+.card-body {
+    background-color: #f8f8f8;
+}
+
+.comments {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.comments img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: solid 2px #dbdbdb;
+    cursor: pointer;
+}
+
+.comment-username {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.input-comment {
+    padding-left: 10px;
+    background-color: white;
+    display: flex;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.input-comment input {
+    width: 90%;
+    outline: none;
+    border: none;
+}
+
+.input-comment button {
+    background-color: #514643;
+    border: solid 2px #514643;
+    border-top-right-radius: 9px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 0;
+}
+
+.input-comment button:hover {
+    background-color: white;
+    color: #514643;
+    border: solid 2px #514643;
+}
+
+.btn-add-tweet {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: blue;
+    border: solid 1px blue;
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    cursor: pointer;
+}
+
+.btn-add-tweet:hover {
+    color: blue;
+    background-color: white;
+}
