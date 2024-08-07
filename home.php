@@ -162,9 +162,6 @@
                                             <div class="my-tooltiptext" id="ep-tweet-image-text"></div>
                                         </div>
                                     </div>
-
-
-
                                 </div>
 
                             </div>
